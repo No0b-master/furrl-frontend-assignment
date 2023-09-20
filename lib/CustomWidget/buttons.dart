@@ -20,7 +20,7 @@ class SolidButton extends StatelessWidget {
                   side: const BorderSide(color: CustomColors.purple)))),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: Center(child: Text(text,style: TextStyle(color: Colors.white),)),
+        child: Center(child: Text(text,style: const TextStyle(color: Colors.white),)),
       ),
     );
   }
