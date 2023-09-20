@@ -20,9 +20,10 @@ class _GenreRowState extends State<GenreRow> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      color: Colors.white,
       width: MediaQuery.of(context).size.width,
-      height: 150,
+      height: 130,
       child: ListView.builder(
           itemCount: _genre.length,
           scrollDirection: Axis.horizontal,

@@ -10,6 +10,6 @@ class EditFrame extends StatefulWidget {
 class _EditFrameState extends State<EditFrame> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Placeholder(color: Colors.teal);
   }
 }
