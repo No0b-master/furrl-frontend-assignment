@@ -11,6 +11,7 @@ class Profile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final data = ModalRoute.of(context)?.settings.arguments;
     return SafeArea(
         child: Scaffold(
       body: Column(
@@ -21,7 +22,7 @@ class Profile extends StatelessWidget {
             child: PhotoName(showFollowerCount: false),
           ),
           const MessageAndHash(),
-          const Post(showProfile: false),
+          Post(showProfile: false , image: data),
           const SizedBox(height: 20),
           HollowButton(
               title: 'Edit Frame',
