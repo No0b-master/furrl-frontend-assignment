@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:furrl_frontend_assignment/Constants/message_constants.dart';
 import 'package:furrl_frontend_assignment/Constants/named_routes.dart';
@@ -8,10 +9,12 @@ import 'package:furrl_frontend_assignment/UI/Colors/custom_colors.dart';
 
 class Post extends StatelessWidget {
   final bool showProfile ;
-  const Post({Key? key, required this.showProfile}) : super(key: key);
+  final dynamic image  ;
+  const Post({Key? key, required this.showProfile, required this.image}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    print(image);
     return Container(
       color: Colors.white,
       child: Column(
@@ -24,7 +27,7 @@ class Post extends StatelessWidget {
               children:  [
                 const HashTags(tag: 'DailyEthics'),
                 const Icon(Icons.circle,size: 10,color: CustomColors.mediumGrey),
-                SolidButton(text: 'Follow', onPress: (){})
+                SimpleButton(text: 'Follow', onPress: (){})
               ],
             ):Container(),
           ),
@@ -36,10 +39,10 @@ class Post extends StatelessWidget {
                 SizedBox(
                   height: 400,
                   width: double.infinity,
-                  child: Image.network(
+                  child: image==null? Image.network(
                     'https://assets2.andaazfashion.com/media/images/m2-home-page/home-page-indo-western-lehenga-banner-17032023.jpg',
                     fit: BoxFit.cover,
-                  ),
+                  ): Image.memory(image),
                 ),
                 Container(
 

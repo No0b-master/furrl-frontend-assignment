@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
 import 'package:furrl_frontend_assignment/Constants/named_routes.dart';
 import 'package:furrl_frontend_assignment/CustomWidget/app_bar.dart';
@@ -11,6 +13,7 @@ class Profile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final data = ModalRoute.of(context)?.settings.arguments;
     return SafeArea(
         child: Scaffold(
       body: Column(
@@ -21,7 +24,7 @@ class Profile extends StatelessWidget {
             child: PhotoName(showFollowerCount: false),
           ),
           const MessageAndHash(),
-          const Post(showProfile: false),
+          Post(showProfile: false , image: data),
           const SizedBox(height: 20),
           HollowButton(
               title: 'Edit Frame',

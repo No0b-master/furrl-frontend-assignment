@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.furrl.assignment.furrl_frontend_assignment">
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="furrl_frontend_assignment"
         android:name="${applicationName}"

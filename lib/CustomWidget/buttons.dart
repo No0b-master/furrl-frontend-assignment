@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:furrl_frontend_assignment/UI/Colors/custom_colors.dart';
 
-class SolidButton extends StatelessWidget {
+class SimpleButton extends StatelessWidget {
   final String text;
   final Function onPress;
 
-  const SolidButton({Key? key, required this.text, required this.onPress})
+  const SimpleButton({Key? key, required this.text, required this.onPress})
       : super(key: key);
 
   @override
@@ -48,6 +48,34 @@ class HollowButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(5)
           ),
           child: Center(child: Text(title,style: const TextStyle(color: CustomColors.purple,fontSize: 18),)),
+        ),
+      ),
+    );
+  }
+}
+
+class SolidButton extends StatelessWidget {
+  final String title ;
+  final Function onPress ;
+  const SolidButton({Key? key, required this.title, required this.onPress}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: (){
+        onPress();
+      },
+      child: Padding(
+        padding: const EdgeInsets.only(left: 10.0,right: 10),
+        child: Container(
+          width: double.infinity,
+          height: 50,
+          decoration: BoxDecoration(
+              color: CustomColors.purple,
+              border: Border.all(color: CustomColors.purple,width: 1.5),
+              borderRadius: BorderRadius.circular(5)
+          ),
+          child: Center(child: Text(title,style: const TextStyle(color: Colors.white,fontSize: 18),)),
         ),
       ),
     );

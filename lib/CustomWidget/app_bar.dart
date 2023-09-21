@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:furrl_frontend_assignment/Constants/named_routes.dart';
 import 'package:furrl_frontend_assignment/UI/Colors/custom_colors.dart';
 
 class Appbar extends StatelessWidget {
-  final bool withBackIcon ;
-  final String title ;
-  const Appbar({Key? key, required this.withBackIcon, required this.title}) : super(key: key);
+  final bool withBackIcon;
+  final String title;
+  const Appbar({Key? key, required this.withBackIcon, required this.title})
+      : super(key: key);
   final double iconSize = 40;
   final Color iconColor = CustomColors.grey;
   final TextStyle textStyle =
@@ -19,17 +21,22 @@ class Appbar extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            withBackIcon ? Row(
-              children: [
-                GestureDetector(
-                    onTap: (){
-                      Navigator.pop(context);
-                    },
-                    child: const Icon(Icons.arrow_back)),
-                const SizedBox(width: 15),
-                Text(title, style: const TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
-              ],
-            ) : Text(title, style: textStyle),
+            withBackIcon
+                ? Row(
+                    children: [
+                      GestureDetector(
+                          onTap: () {
+                            Navigator.of(context)
+                                .popUntil(ModalRoute.withName(NamedRoutes.home));
+                          },
+                          child: const Icon(Icons.arrow_back)),
+                      const SizedBox(width: 15),
+                      Text(title,
+                          style: const TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold)),
+                    ],
+                  )
+                : Text(title, style: textStyle),
             Row(
               children: [
                 Icon(Icons.search, size: iconSize, color: iconColor),

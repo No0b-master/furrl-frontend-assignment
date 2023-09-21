@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:furrl_frontend_assignment/CustomWidget/app_bar.dart';
+import 'package:furrl_frontend_assignment/CustomWidget/edit_frame.dart';
 
 class EditFrame extends StatefulWidget {
   const EditFrame({Key? key}) : super(key: key);
@@ -10,6 +12,15 @@ class EditFrame extends StatefulWidget {
 class _EditFrameState extends State<EditFrame> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder(color: Colors.teal);
+    return SafeArea(
+        child: Scaffold(
+      body: SingleChildScrollView(
+        child: Column(children: const [
+          Appbar(withBackIcon: true, title: 'Edit Frame'),
+          EditFrameWidget()
+
+        ],),
+      ),
+    ));
   }
 }

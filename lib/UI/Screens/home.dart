@@ -19,7 +19,7 @@ class Home extends StatelessWidget {
           Message(message: MessageConstants.offerMessage),
           GenreRow(),
           SizedBox(height: 10),
-          Post(showProfile: true)
+          Post(showProfile: true,image: null)
         ],
       ),
     ));
