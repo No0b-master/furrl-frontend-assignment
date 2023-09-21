@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:furrl_frontend_assignment/Constants/message_constants.dart';
 import 'package:furrl_frontend_assignment/Constants/named_routes.dart';
@@ -14,7 +13,6 @@ class Post extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(image);
     return Container(
       color: Colors.white,
       child: Column(

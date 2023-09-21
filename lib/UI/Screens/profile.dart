@@ -1,5 +1,3 @@
-import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
 import 'package:furrl_frontend_assignment/Constants/named_routes.dart';
 import 'package:furrl_frontend_assignment/CustomWidget/app_bar.dart';

@@ -49,8 +49,8 @@ class _EditFrameWidgetState extends State<EditFrameWidget> {
                 title: 'Save',
                 onPress: () async {
                   Uint8List? image = await captureWidget();
-                  Navigator.pushNamed(context, NamedRoutes.profile,
-                      arguments: image);
+                  _didPushButton(image);
+
                 },
               ),
               const SizedBox(height: 10),
@@ -83,7 +83,10 @@ class _EditFrameWidgetState extends State<EditFrameWidget> {
             ),
           );
   }
-
+void _didPushButton(image){
+  Navigator.pushNamed(context, NamedRoutes.profile,
+      arguments: image);
+}
   void selectImages() async {
     final List<XFile> selectedImages = await _picker.pickMultiImage();
     if (selectedImages.isNotEmpty) {
